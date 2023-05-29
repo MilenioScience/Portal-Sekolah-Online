@@ -1,11 +1,11 @@
 <?php
- if (!isset($_GET["isian"]) || !isset($_GET["password"]))
+ if (!isset($_POST["isian"]) || !isset($_POST["password"]))
  {
 	 die("");
  }
- $isiannama = $_GET["isian"];
- $isianemail = $_GET["isian"];
- $passwordlogin = $_GET["password"];
+ $isiannama = $_POST["isian"];
+ $isianemail = $_POST["isian"];
+ $passwordlogin = $_POST["password"];
  require("koneksisekolah.php");
  $querysiswa = "SELECT * FROM siswa WHERE nama='$isiannama' AND passwordsiswa='$passwordlogin'";
  $queryguru = "SELECT * FROM guru WHERE email='$isianemail' AND passwordguru='$passwordlogin'";
@@ -14,34 +14,19 @@
  if ($hasilsiswa->num_rows > 0)
  {
 	 $data = $hasilsiswa->fetch_row();
-	 $id = $data[0];
-	 $nama = $data[1];
-	 $kelas = $data[2];
+	 $nama = $data[0];
 	 session_start();
-	 $_SESSION['idsiswa'] = $id;
-	 $_SESSION['namasiswa'] = $nama;
-	 $_SESSION['kelas'] = $kelas;
-	 $_SESSION['statussiswa'] = 'siswa';
+	 $_SESSION['nama'] = $nama;
 	 echo 'siswa';
  }
  if ($hasilguru->num_rows > 0)
  {
 	 $data = $hasilguru->fetch_row();
-	 $id = $data[0];
-	 $nama = $data[1];
-	 $isimapel = $data[3];
+	 $nama = $data[0];
 	 session_start();
-	 $_SESSION['idguru'] = $id;
-	 $_SESSION['namaguru'] = $nama;
-	 $_SESSION['isimapel'] = $isimapel;
-	 $_SESSION['statusguru'] = 'guru';
+	 $_SESSION['nama'] = $nama;
 	 echo 'guru';
- }
- if (($isiannama == 'admin') and ($isiannama == 'admin'))
- {
-	 session_start();
-	 $_SESSION['statusadmin'] = 'admin';
-	 echo 'admin';
+
  }
  else
  {

@@ -1,12 +1,3 @@
-<?php
-  session_start();
-	   if ($_SESSION['statusguru'] != 'guru')
-	   {
-		 echo "<script>alert('Anda belum login, silahkan login lebih dulu!')</script>";
-		 echo "<script>window.location.replace('login.php')</script>";
-		 die();   
-	   } 
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,10 +22,10 @@
 	
 	<!-- FAVICONS ICON ============================================= -->
 	<link rel="icon" href="../error-404.html" type="image/x-icon" />
-	<link rel="shortcut icon" type="image/x-icon" href="admin/assets/images/favicon.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
 	
 	<!-- PAGE TITLE HERE ============================================= -->
-	<title>Portal Sekolah Online </title>
+	<title>EduChamp : Education HTML Template </title>
 	
 	<!-- MOBILE SPECIFIC ============================================= -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,46 +36,19 @@
 	<![endif]-->
 	
 	<!-- All PLUGINS CSS ============================================= -->
-	<link rel="stylesheet" type="text/css" href="admin/assets/css/assets.css">
-	<link rel="stylesheet" type="text/css" href="admin/assets/vendors/calendar/fullcalendar.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/assets.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendors/calendar/fullcalendar.css">
 	
 	<!-- TYPOGRAPHY ============================================= -->
-	<link rel="stylesheet" type="text/css" href="admin/assets/css/typography.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/typography.css">
 	
 	<!-- SHORTCODES ============================================= -->
-	<link rel="stylesheet" type="text/css" href="admin/assets/css/shortcodes/shortcodes.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/shortcodes/shortcodes.css">
 	
 	<!-- STYLESHEETS ============================================= -->
-	<link href="admin/sbadmin/css/sb-admin-2.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="admin/sbadmin/vendor/datepicker/css/bootstrap-datepicker3.css" />
-	<link rel="stylesheet" type="text/css" href="admin/assets/css/style.css">
-	<link rel="stylesheet" type="text/css" href="admin/assets/css/dashboard.css">
-	<link class="skin" rel="stylesheet" type="text/css" href="admin/assets/css/color/color-1.css">
-	<link rel="stylesheet" href="admin/sbadmin/vendor/datatables/dataTables.bootstrap4.min.css" />
-	
-	<!-- External JavaScripts -->
-	<script src="admin/sbadmin/vendor/jquery/jquery.min.js"></script>
-    <script src="admin/sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="admin/sbadmin/vendor/datepicker/js/bootstrap-datepicker.min.js"></script> 
-    <script src="admin/sbadmin/vendor/bootbox/bootbox.min.js"></script>
-	<script src="admin/assets/js/jquery.min.js"></script>
-	<script src="admin/assets/vendors/bootstrap/js/popper.min.js"></script>
-	<script src="admin/assets/vendors/bootstrap/js/bootstrap.min.js"></script>
-	<script src="admin/assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-	<script src="admin/assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
-	<script src="admin/assets/vendors/magnific-popup/magnific-popup.js"></script>
-	<script src="admin/assets/vendors/counter/waypoints-min.js"></script>
-	<script src="admin/assets/vendors/counter/counterup.min.js"></script>
-	<script src="admin/assets/vendors/imagesloaded/imagesloaded.js"></script>
-	<script src="admin/assets/vendors/masonry/masonry.js"></script>
-	<script src="admin/assets/vendors/masonry/filter.js"></script>
-	<script src="admin/assets/vendors/owl-carousel/owl.carousel.js"></script>
-	<script src='admin/assets/vendors/scroll/scrollbar.min.js'></script>
-	<script src="admin/assets/js/functions.js"></script>
-	<script src="admin/assets/vendors/chart/chart.min.js"></script>
-	<script src="admin/assets/js/admin.js"></script>
-	<script src="admin/sbadmin/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="admin/sbadmin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/dashboard.css">
+	<link class="skin" rel="stylesheet" type="text/css" href="assets/css/color/color-1.css">
 	
 </head>
 <body class="ttr-opened-sidebar ttr-pinned-sidebar">
@@ -99,12 +63,30 @@
 			</div>
 			<!--sidebar menu toggler end -->
 			<!--logo start -->
+			<div class="ttr-logo-box">
+				<div>
+					<a href="index.html" class="ttr-logo">
+						<img alt="" class="ttr-logo-mobile" src="assets/images/logo-mobile.png" width="30" height="30">
+						<img alt="" class="ttr-logo-desktop" src="assets/images/logo-white.png" width="160" height="27">
+					</a>
+				</div>
+			</div>
 			<!--logo end -->
 			<div class="ttr-header-menu">
 				<!-- header left menu start -->
 				<ul class="ttr-header-navigation">
 					<li>
 						<a href="../index.html" class="ttr-material-button ttr-submenu-toggle">HOME</a>
+					</li>
+					<li>
+						<a href="#" class="ttr-material-button ttr-submenu-toggle">QUICK MENU <i class="fa fa-angle-down"></i></a>
+						<div class="ttr-header-submenu">
+							<ul>
+								<li><a href="../courses.html">Our Courses</a></li>
+								<li><a href="../event.html">New Event</a></li>
+								<li><a href="../membership.html">Membership</a></li>
+							</ul>
+						</div>
 					</li>
 				</ul>
 				<!-- header left menu end -->
@@ -113,21 +95,136 @@
 				<!-- header right menu start -->
 				<ul class="ttr-header-navigation">
 					<li>
-						<a href="#" class="ttr-material-button ttr-submenu-toggle"><?php echo $_SESSION['namaguru']; ?></a>
-						<a href="#" class="ttr-material-button ttr-submenu-toggle"><?php echo $_SESSION['isimapel']; ?></a>
-				    </li>
+						<a href="#" class="ttr-material-button ttr-search-toggle"><i class="fa fa-search"></i></a>
+					</li>
+					<li>
+						<a href="#" class="ttr-material-button ttr-submenu-toggle"><i class="fa fa-bell"></i></a>
+						<div class="ttr-header-submenu noti-menu">
+							<div class="ttr-notify-header">
+								<span class="ttr-notify-text-top">9 New</span>
+								<span class="ttr-notify-text">User Notifications</span>
+							</div>
+							<div class="noti-box-list">
+								<ul>
+									<li>
+										<span class="notification-icon dashbg-gray">
+											<i class="fa fa-check"></i>
+										</span>
+										<span class="notification-text">
+											<span>Sneha Jogi</span> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 02:14</span>
+										</span>
+									</li>
+									<li>
+										<span class="notification-icon dashbg-yellow">
+											<i class="fa fa-shopping-cart"></i>
+										</span>
+										<span class="notification-text">
+											<a href="#">Your order is placed</a> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 7 Min</span>
+										</span>
+									</li>
+									<li>
+										<span class="notification-icon dashbg-red">
+											<i class="fa fa-bullhorn"></i>
+										</span>
+										<span class="notification-text">
+											<span>Your item is shipped</span> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 2 May</span>
+										</span>
+									</li>
+									<li>
+										<span class="notification-icon dashbg-green">
+											<i class="fa fa-comments-o"></i>
+										</span>
+										<span class="notification-text">
+											<a href="#">Sneha Jogi</a> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 14 July</span>
+										</span>
+									</li>
+									<li>
+										<span class="notification-icon dashbg-primary">
+											<i class="fa fa-file-word-o"></i>
+										</span>
+										<span class="notification-text">
+											<span>Sneha Jogi</span> sent you a message.
+										</span>
+										<span class="notification-time">
+											<a href="#" class="fa fa-close"></a>
+											<span> 15 Min</span>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
 					<li>
 						<a href="#" class="ttr-material-button ttr-submenu-toggle"><span class="ttr-user-avatar"><img alt="" src="assets/images/testimonials/pic3.jpg" width="32" height="32"></span></a>
 						<div class="ttr-header-submenu">
 							<ul>
-								<li><a href="logout-guru.php">Logout</a></li>
+								<li><a href="user-profile.html">My profile</a></li>
+								<li><a href="list-view-calendar.html">Activity</a></li>
+								<li><a href="mailbox.html">Messages</a></li>
+								<li><a href="../login.html">Logout</a></li>
 							</ul>
+						</div>
+					</li>
+					<li class="ttr-hide-on-mobile">
+						<a href="#" class="ttr-material-button"><i class="ti-layout-grid3-alt"></i></a>
+						<div class="ttr-header-submenu ttr-extra-menu">
+							<a href="#">
+								<i class="fa fa-music"></i>
+								<span>Musics</span>
+							</a>
+							<a href="#">
+								<i class="fa fa-youtube-play"></i>
+								<span>Videos</span>
+							</a>
+							<a href="#">
+								<i class="fa fa-envelope"></i>
+								<span>Emails</span>
+							</a>
+							<a href="#">
+								<i class="fa fa-book"></i>
+								<span>Reports</span>
+							</a>
+							<a href="#">
+								<i class="fa fa-smile-o"></i>
+								<span>Persons</span>
+							</a>
+							<a href="#">
+								<i class="fa fa-picture-o"></i>
+								<span>Pictures</span>
+							</a>
 						</div>
 					</li>
 				</ul>
 				<!-- header right menu end -->
 			</div>
 			<!--header search panel start -->
+			<div class="ttr-search-bar">
+				<form class="ttr-search-form">
+					<div class="ttr-search-input-wrapper">
+						<input type="text" name="qq" placeholder="search something..." class="ttr-search-input">
+						<button type="submit" name="search" class="ttr-search-submit"><i class="ti-arrow-right"></i></button>
+					</div>
+					<span class="ttr-search-close ttr-search-toggle">
+						<i class="ti-close"></i>
+					</span>
+				</form>
+			</div>
 			<!--header search panel end -->
 		</div>
 	</header>
@@ -136,117 +233,97 @@
 	<div class="ttr-sidebar">
 		<div class="ttr-sidebar-wrapper content-scroll">
 			<!-- side menu logo start -->
+			<div class="ttr-sidebar-logo">
+				<a href="#"><img alt="" src="assets/images/logo.png" width="122" height="27"></a>
+				<!-- <div class="ttr-sidebar-pin-button" title="Pin/Unpin Menu">
+					<i class="material-icons ttr-fixed-icon">gps_fixed</i>
+					<i class="material-icons ttr-not-fixed-icon">gps_not_fixed</i>
+				</div> -->
+				<div class="ttr-sidebar-toggle-button">
+					<i class="ti-arrow-left"></i>
+				</div>
+			</div>
 			<!-- side menu logo end -->
 			<!-- sidebar menu start -->
 			<nav class="ttr-sidebar-navi">
 				<ul>
 					<li>
-						<a href="#" class="ttr-material-button">
-							<span class="ttr-icon"><i class="ti-calendar"></i></span>
-		                	<span class="ttr-label">Jadwal</span>
-							<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
+						<a href="index.html" class="ttr-material-button">
+							<span class="ttr-icon"><i class="ti-home"></i></span>
+		                	<span class="ttr-label">Dashborad</span>
 		                </a>
-						<ul>
-		                	<li>
-		                		<a href="?kode=jadwalpelajaran" class="ttr-material-button"><span class="ttr-label">Jadwal Pelajaran</span></a>
-		                	</li>
-		                	<li>
-		                		<a href="#" class="ttr-material-button"><span class="ttr-label">Jadwal Rapat</span></a>
-		                	</li>
-		                </ul>
 		            </li>
 					<li>
-						<a href="#" class="ttr-material-button">
-							<span class="ttr-icon"><i class="ti-comments"></i></span>
-		                	<span class="ttr-label">Ruang Diskusi</span>
-							<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
-		                </a>
-						<ul>
-		                	<li>
-		                		<a href="?kode=tampildiskusi" class="ttr-material-button"><span class="ttr-label">Diskusi</span></a>
-		                	</li>
-		                	<li>
-		                		<a href="?kode=buatdiskusi" class="ttr-material-button"><span class="ttr-label">Buat Diskusi</span></a>
-		                	</li>
-		                </ul>
-		            </li>
-					<li>
-						<a href="#" class="ttr-material-button">
+						<a href="courses.html" class="ttr-material-button">
 							<span class="ttr-icon"><i class="ti-book"></i></span>
-		                	<span class="ttr-label">Tugas</span>
-							<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
+		                	<span class="ttr-label">Courses</span>
 		                </a>
-						<ul>
-		                	<li>
-		                		<a href="?kode=tampiltugas" class="ttr-material-button"><span class="ttr-label">Tampil Tugas</span></a>
-		                	</li>
-		                	<li>
-		                		<a href="?kode=tugas" class="ttr-material-button"><span class="ttr-label">Buat Tugas</span></a>
-		                	</li>
-						</ul>
 		            </li>
 					<li>
 						<a href="#" class="ttr-material-button">
-							<span class="ttr-icon"><i class="ti-bookmark-alt"></i></span>
-		                	<span class="ttr-label">Ujian</span>
-							<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
+							<span class="ttr-icon"><i class="ti-email"></i></span>
+		                	<span class="ttr-label">Mailbox</span>
+		                	<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
 		                </a>
-						<ul>
+		                <ul>
 		                	<li>
-		                		<a href="#" class="ttr-material-button">
-									<span class="ttr-label">Ujian Harian</span>
-									<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
-								</a>
-								<ul>
-								 <li>
-		                		   <a href="?kode=tampilujianharian" class="ttr-material-button"><span class="ttr-label">Tampil Ujian Harian</span></a>
-								 </li>
-								 <li>
-		                		   <a href="?kode=buatujianharian" class="ttr-material-button"><span class="ttr-label">Buat Ujian Harian</span></a>
-								 </li>
-								</ul>
+		                		<a href="mailbox.html" class="ttr-material-button"><span class="ttr-label">Mail Box</span></a>
 		                	</li>
 		                	<li>
-		                		<a href="#" class="ttr-material-button">
-									<span class="ttr-label">UTS</span>
-									<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
-								</a>
-								<ul>
-								 <li>
-		                		   <a href="?kode=tampiluts" class="ttr-material-button"><span class="ttr-label">Tampil UTS</span></a>
-								 </li>
-								 <li>
-		                		   <a href="?kode=buatuts" class="ttr-material-button"><span class="ttr-label">Buat UTS</span></a>
-								 </li>
-								</ul>
+		                		<a href="mailbox-compose.html" class="ttr-material-button"><span class="ttr-label">Compose</span></a>
 		                	</li>
 							<li>
-		                		<a href="#" class="ttr-material-button">
-									<span class="ttr-label">UAS</span>
-									<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
-								</a>
-								<ul>
-								 <li>
-		                		   <a href="?kode=tampiluas" class="ttr-material-button"><span class="ttr-label">Tampil UAS</span></a>
-								 </li>
-								 <li>
-		                		   <a href="?kode=buatuas" class="ttr-material-button"><span class="ttr-label">Buat UAS</span></a>
-								 </li>
-								</ul>
+		                		<a href="mailbox-read.html" class="ttr-material-button"><span class="ttr-label">Mail Read</span></a>
 		                	</li>
 		                </ul>
 		            </li>
 					<li>
-						<a href="?kode=rapor" class="ttr-material-button">
-							<span class="ttr-icon"><i class="fa fa-book"></i></span>
-		                	<span class="ttr-label">Rapor</span>
+						<a href="#" class="ttr-material-button">
+							<span class="ttr-icon"><i class="ti-calendar"></i></span>
+		                	<span class="ttr-label">Calendar</span>
+		                	<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
+		                </a>
+		                <ul>
+		                	<li>
+		                		<a href="basic-calendar.html" class="ttr-material-button"><span class="ttr-label">Basic Calendar</span></a>
+		                	</li>
+		                	<li>
+		                		<a href="list-view-calendar.html" class="ttr-material-button"><span class="ttr-label">List View</span></a>
+		                	</li>
+		                </ul>
+		            </li>
+					<li>
+						<a href="bookmark.html" class="ttr-material-button">
+							<span class="ttr-icon"><i class="ti-bookmark-alt"></i></span>
+		                	<span class="ttr-label">Bookmarks</span>
 		                </a>
 		            </li>
 					<li>
-						<a href="admin/teacher-profile.html" class="ttr-material-button">
-							<span class="ttr-icon"><i class="ti-user"></i></span>
-		                	<span class="ttr-label">Profilku</span>
+						<a href="review.html" class="ttr-material-button">
+							<span class="ttr-icon"><i class="ti-comments"></i></span>
+		                	<span class="ttr-label">Review</span>
 		                </a>
+		            </li>
+					<li>
+						<a href="add-listing.html" class="ttr-material-button">
+							<span class="ttr-icon"><i class="ti-layout-accordion-list"></i></span>
+		                	<span class="ttr-label">Add listing</span>
+		                </a>
+		            </li>
+					<li>
+						<a href="#" class="ttr-material-button">
+							<span class="ttr-icon"><i class="ti-user"></i></span>
+		                	<span class="ttr-label">My Profile</span>
+		                	<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
+		                </a>
+		                <ul>
+		                	<li>
+		                		<a href="user-profile.html" class="ttr-material-button"><span class="ttr-label">User Profile</span></a>
+		                	</li>
+		                	<li>
+		                		<a href="teacher-profile.html" class="ttr-material-button"><span class="ttr-label">Teacher Profile</span></a>
+		                	</li>
+		                </ul>
 		            </li>
 		            <li class="ttr-seperate"></li>
 				</ul>
@@ -258,65 +335,217 @@
 	<!-- Left sidebar menu end -->
 
 	<!--Main container start -->
-<?php
- if (isset($_GET['kode']))
- {
-	 $kode = $_GET['kode'];
-	 if ($kode == 'jadwalpelajaran')
-	 {
-		include('jadwalpelajaran.php'); 
-	 }
-	 else if ($kode == 'tampildiskusi')
-	 {
-		include('tampildiskusi.php'); 
-	 }
-	 else if ($kode == 'buatdiskusi')
-	 {
-		include('buatdiskusi.php'); 
-	 }
-	 else if ($kode == 'tampiljawabandiskusi')
-	 {
-		include('tampildiskusiguru.php'); 
-	 }
-	 else if ($kode == 'tampiltugas')
-	 {
-		include('tampiltugas.php'); 
-	 }
-	 else if ($kode == 'tugas')
-	 {
-		include('buattugas.php'); 
-	 }
-	 else if ($kode == 'buatujianharian')
-	 {
-		include('buatujianharian.php'); 
-	 }
-	 else if ($kode == 'tampilujianharian')
-	 {
-		include('tampilujianharian.php'); 
-	 }
-	 else if ($kode == 'buatuts')
-	 {
-		include('buatuts.php'); 
-	 }
-	 else if ($kode == 'tampiluts')
-	 {
-		include('tampiluts.php'); 
-	 }
-	 else if ($kode == 'buatuas')
-	 {
-		include('buatuas.php'); 
-	 }
-	 else if ($kode == 'tampiluas')
-	 {
-		include('tampiluas.php'); 
-	 }
-	 else if ($kode == 'rapor')
-	 {
-		include('rapor.php'); 
-	 }
-  }
-?>
+	<main class="ttr-wrapper">
+		<div class="container-fluid">
+			<div class="db-breadcrumb">
+				<h4 class="breadcrumb-title">Teacher Profile</h4>
+				<ul class="db-breadcrumb-list">
+					<li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+					<li>Teacher Profile</li>
+				</ul>
+			</div>	
+			<div class="row">
+				<!-- Your Profile Views Chart -->
+				<div class="col-lg-12 m-b30">
+					<div class="widget-box">
+						<div class="wc-title">
+							<h4>Teacher Profile</h4>
+						</div>
+						<div class="widget-inner">
+							<form class="edit-profile m-b30">
+								<div class="row">
+									<div class="col-12">
+										<div class="ml-auto">
+											<h3>1. Personal Details</h3>
+										</div>
+									</div>
+									<div class="form-group col-6">
+										<label class="col-form-label">Full Name</label>
+										<div>
+											<input class="form-control" type="text" value="Mark Andre">
+										</div>
+									</div>
+									<div class="form-group col-6">
+										<label class="col-form-label">Occupation</label>
+										<div>
+											<input class="form-control" type="text" value="CTO">
+										</div>
+									</div>
+									<div class="form-group col-6">
+										<label class="col-form-label">Company Name</label>
+										<div>
+											<input class="form-control" type="text" value="EduChamp">
+											<span class="help">If you want your invoices addressed to a company. Leave blank to use your full name.</span>
+										</div>
+									</div>
+									<div class="form-group col-6">
+										<label class="col-form-label">Phone No.</label>
+										<div>
+											<input class="form-control" type="text" value="+120 012345 6789">
+										</div>
+									</div>
+									
+									<div class="seperator"></div>
+									
+									<div class="col-12 m-t20">
+										<div class="ml-auto m-b5">
+											<h3>2. Address</h3>
+										</div>
+									</div>
+									<div class="form-group col-6">
+										<label class="col-form-label">Address</label>
+										<div>
+											<input class="form-control" type="text" value="5-S2-20 Dummy City, UK">
+										</div>
+									</div>
+									<div class="form-group col-6">
+										<label class="col-form-label">City</label>
+										<div>
+											<input class="form-control" type="text" value="US">
+										</div>
+									</div>
+									<div class="form-group col-6">
+										<label class="col-form-label">State</label>
+										<div>
+											<input class="form-control" type="text" value="California">
+										</div>
+									</div>
+									<div class="form-group col-6">
+										<label class="col-form-label">Postcode</label>
+										<div>
+											<input class="form-control" type="text" value="000702">
+										</div>
+									</div>
 
+									<div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
+
+									<div class="col-12 m-t20">
+										<div class="ml-auto">
+											<h3 class="m-form__section">3. Social Links</h3>
+										</div>
+									</div>
+
+									<div class="form-group col-6">
+										<label class="col-form-label">Linkedin</label>
+										<div>
+											<input class="form-control" type="text" value="www.linkedin.com">
+										</div>
+									</div>
+									<div class="form-group col-6">
+										<label class="col-form-label">Facebook</label>
+										<div>
+											<input class="form-control" type="text" value="www.facebook.com">
+										</div>
+									</div>
+									<div class="form-group col-6">
+										<label class="col-form-label">Twitter</label>
+										<div>
+											<input class="form-control" type="text" value="www.twitter.com">
+										</div>
+									</div>
+									<div class="form-group col-6">
+										<label class="col-form-label">Instagram</label>
+										<div>
+											<input class="form-control" type="text" value="www.instagram.com">
+										</div>
+									</div>
+									<div class="col-12">
+										<button type="reset" class="btn">Save changes</button>
+										<button type="reset" class="btn-secondry">Cancel</button>
+									</div>
+								</div>
+							</form>
+							<form class="edit-profile">
+								<div class="row">
+									<div class="col-12 m-t20">
+										<div class="ml-auto">
+											<h3 class="m-form__section">4. Add Item</h3>
+										</div>
+									</div>
+									<div class="col-12">
+										<table id="item-add" style="width:100%;">
+											<tr class="list-item">
+												<td>
+													<div class="row">
+														<div class="col-md-4">
+															<label class="col-form-label">Course Name</label>
+															<div>
+																<input class="form-control" type="text" value="">
+															</div>
+														</div>
+														<div class="col-md-3">
+															<label class="col-form-label">Course Category</label>
+															<div>
+																<input class="form-control" type="text" value="">
+															</div>
+														</div>
+														<div class="col-md-3">
+															<label class="col-form-label">Course Category</label>
+															<div>
+																<input class="form-control" type="text" value="">
+															</div>
+														</div>
+														<div class="col-md-2">
+															<label class="col-form-label">Close</label>
+															<div class="form-group">
+																<a class="delete" href="#"><i class="fa fa-close"></i></a>
+															</div>
+														</div>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+									<div class="col-12">
+										<button type="button" class="btn-secondry add-item m-r5"><i class="fa fa-fw fa-plus-circle"></i>Add Item</button>
+										<button type="reset" class="btn">Save changes</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<!-- Your Profile Views Chart END-->
+			</div>
+		</div>
+	</main>
+	<div class="ttr-overlay"></div>
+
+<!-- External JavaScripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/vendors/bootstrap/js/popper.min.js"></script>
+<script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+<script src="assets/vendors/magnific-popup/magnific-popup.js"></script>
+<script src="assets/vendors/counter/waypoints-min.js"></script>
+<script src="assets/vendors/counter/counterup.min.js"></script>
+<script src="assets/vendors/imagesloaded/imagesloaded.js"></script>
+<script src="assets/vendors/masonry/masonry.js"></script>
+<script src="assets/vendors/masonry/filter.js"></script>
+<script src="assets/vendors/owl-carousel/owl.carousel.js"></script>
+<script src='assets/vendors/scroll/scrollbar.min.js'></script>
+<script src="assets/js/functions.js"></script>
+<script src="assets/vendors/chart/chart.min.js"></script>
+<script src="assets/js/admin.js"></script>
+<script>
+// Pricing add
+	function newMenuItem() {
+		var newElem = $('tr.list-item').first().clone();
+		newElem.find('input').val('');
+		newElem.appendTo('table#item-add');
+	}
+	if ($("table#item-add").is('*')) {
+		$('.add-item').on('click', function (e) {
+			e.preventDefault();
+			newMenuItem();
+		});
+		$(document).on("click", "#item-add .delete", function (e) {
+			e.preventDefault();
+			$(this).parent().parent().parent().parent().remove();
+		});
+	}
+</script>
 </body>
 
 <!-- Mirrored from educhamp.themetrades.com/demo/admin/teacher-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:11:35 GMT -->
